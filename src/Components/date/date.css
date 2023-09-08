@@ -1,0 +1,20 @@
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date{
+    display: block;
+}
+.day{
+    margin-right: 10px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.day-number{
+    font-family: "Open Sans",sans-serif;
+}
+.month{
+    font-size: 20px;
+}

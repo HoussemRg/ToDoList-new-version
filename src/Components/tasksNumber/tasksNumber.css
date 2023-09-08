@@ -1,0 +1,11 @@
+.tasks-number{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 700;
+}
+.numbers{
+    margin-bottom: -3px;
+}
