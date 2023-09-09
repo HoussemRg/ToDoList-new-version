@@ -1,0 +1,31 @@
+.task{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:150px;
+    margin: 15px;
+    font-family: "Roboto","Raleway";
+    font-size: 25px;
+}
+.buttons{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap:40px;
+}
+.secondbtn{
+    background-color: white;
+    color:red;
+    border: none;
+    font-size:30px;
+}
+#makeButton{
+    width: 100px;
+    height: 40px;
+    display: inline;
+    color:white;
+    background-color: green;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+}

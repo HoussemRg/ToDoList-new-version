@@ -41,3 +41,35 @@
     transform: rotate(360deg);
   }
 }
+.tasks-body{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tasks-body h3{
+  padding:20px;
+}
+.button{
+  width: 170px;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(90deg, rgba(89,29,163,0.9500175070028011) 0%, rgba(47,181,215,0.8463760504201681) 42%);
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  
+}
+.button p{
+  padding: 10px;
+  margin-bottom: -1px;
+}
+.button span{
+  font-size: 30px;
+  color:#61dafb
+}
