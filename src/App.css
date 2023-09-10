@@ -1,7 +1,10 @@
 .App {
   text-align: center;
-  width: 800px;
+  
+  height: 100vh;
+  
 }
+
 .header{
   background: linear-gradient(90deg, rgba(89,29,163,0.9500175070028011) 0%, rgba(47,181,215,0.8463760504201681) 42%);
   color: white;
@@ -45,8 +48,14 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  height: calc(100% - 177px);
+}
+@media  screen and (width:800px) {
+  .tasks-body{
+  
+  }
 }
 .tasks-body h3{
   padding:20px;
@@ -68,8 +77,43 @@
 .button p{
   padding: 10px;
   margin-bottom: -1px;
+  font-weight: 700;
 }
 .button span{
   font-size: 30px;
   color:#61dafb
+}
+.input-box{
+  margin-top: 20px;
+  
+  
+  
+}
+.input-box input{
+  outline: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;;
+  border:solid 1px rgba(47,181,215,0.8463760504201681);
+  
+  color:black;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+
+}
+.input-box input::placeholder{
+  color: black;
+  
+}
+.input-box button{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border:solid 1px rgba(47,181,215,0.8463760504201681);
+  background-color: rgba(47,181,215,0.8463760504201681);
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: 700;
+
 }
