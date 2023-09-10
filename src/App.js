@@ -1,9 +1,11 @@
 import './App.css';
 import DateDisplay from './Components/date/date'
 import TasksNumber from './Components/tasksNumber/tasksNumber';
-import { useRef,useState,useReducer } from 'react';
+import { useRef,useState,useReducer, useEffect } from 'react';
 import Task from "./Components/task/task"
+
 function App() {
+  
   const inputRef= useRef(null);
   const [inputToggle,setInputToggle]=useState(false);
   const [tasks,setTasks]=useState([]);
@@ -12,6 +14,12 @@ function App() {
   }
   const reducer=(state,action)=>{
     switch(action.type){
+      case "INITIAL_STATS":
+        return {
+          total: action.payload.total,
+          remaining: action.payload.remaining,
+          done: action.payload.done,
+        };
       case "INCREMENT_TOTAL_TASKS":
         return{total:state.total+1,
                remaining:state.remaining,
@@ -55,7 +63,20 @@ function App() {
     }
   }
   
-  const [state,dispatch]=useReducer(reducer,{total:0,remaining:0,done:0,doneTask:false})
+  const [state,dispatch]=useReducer(reducer,{total:0,remaining:0,done:0});
+  useEffect(() => {
+    const storedStats = localStorage.getItem("stats");
+    if (storedStats) {
+      const parsedStats = JSON.parse(storedStats);
+      dispatch({
+        type: "INITIAL_STATS",
+        payload: parsedStats,
+      });
+    }
+  }, []);
+  useEffect(()=>{
+    localStorage.setItem("stats",JSON.stringify(state));
+  },[state]);
   const addTask = ()=>{
     const taskName=inputRef.current.value;
     if(taskName!==''){
@@ -70,6 +91,7 @@ function App() {
       dispatch({type:"INCREMENT_TOTAL_TASKS"});
       inputRef.current.value="";
       setInputToggle(false);
+      
     }
   }
   const deleteTask =(id)=>{
